@@ -1,0 +1,59 @@
+For yellow font:-
+{
+PS1="\[\033[1;33m\]<\u@\h \W>\$ "
+}
+
+
+Enter root mode first:-
+sudo su
+
+
+Two files to be created:-
+touch CC.h
+touch RFC.h
+gedit CC.h kar ka code copy paste
+
+
+
+CC.h:-
+#!/bin/bash
+clear
+echo "Cache Cleaner"
+echo ""
+sleep 1
+echo "Current Memory Usage:-"
+sleep 1
+free -m
+echo ""
+echo "Cache cleaning command running....."
+echo ""
+sleep 1
+echo "Memory details after cleaning:-"
+sleep 1
+echo 1 > /proc/sys/vm/drop_caches
+free -m
+echo ""
+echo "Cache size has been reduced"
+sleep 1
+echo ""
+echo "Thank you"
+
+
+
+RFC.h:-
+#!/bin/bash
+clear
+echo "Creating a file of 100Mb"
+echo ""
+sleep 1
+echo "Creating........."
+dd if=/dev/zero of=bigfile.txt bs=100M count=1
+echo ""
+sleep 1
+echo "File created"
+
+
+
+Compile ka liya:-
+./CC.h
+./RFC.h
